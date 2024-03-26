@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<!-- INFO STAFF -->
+    <section class="section" id="staff">
+        <div class="container">
+            <h2 class="mb-5 pb-4"><span class="text-danger">Technical</span> Staff</h2>
+            <div class="row">
+                {% for staff in staff_data %}
+                <div class="col-md-4 col-sm-6">
+                    <div class="card mb-5">
+                       <div class="card-header has-icon">
+                            <img class="ti-vector text-danger" aria-hidden="true" src="{{ staff.Staf_imgs }}" alt="{{ staff.Staf_names }}" width="30 px">
+                        </div>
+                        <div class="card-body px-4 py-3">
+                            <h5 class="mb-3 card-title text-dark">{{ staff.Staf_names }}</h5>
+                            <P class="subtitle">{{ staff.Staf_positions }}</P>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- FIN INFO STAFF -->
+{% endblock %}

@@ -1,0 +1,33 @@
+
+{% extends 'core/base.html' %}
+{% block content %}
+
+    <!-- INFO MARKET VALUES -->
+     <section class="section" id="market">
+        <div class="container">
+            <h2 class="mb-5">Market <span class="text-danger">Values</span></h2>
+            <div class="row">
+                {% for player in player_data %}
+                <div class="blog-card">
+                    <div >
+                        <img src="{{ player.img_src_player }}" alt="{{ player.player_name }}" width="100 px"  style="margin-top: 60px; margin-left: 10px"   >
+                    </div>
+                    <div class="content-holder">
+                        <h6 class="title">{{ player.player_name }} </h6>
+
+                        <p class="post-details">
+                            <a >N° : {{ player.player_number }}</a>
+                            <a ><i class="ti-heart text-danger"></i>Edad : {{ player.age }}</a>
+                            <a ><i class="ti-comment"></i>Precio actual : {{ player.market_value }}</a>
+                        </p>
+                        <img src="{{ player.img_src_flag }}" alt="{{ player.country }}" width="20px" >
+                        <p><b>{{ player.position }}</b></p>
+                        <p>Fecha de finalización de contrato del jugador : {{ player.contract_end_date }}</p>
+                    </div>
+                </div><!-- end of blog wrapper -->
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

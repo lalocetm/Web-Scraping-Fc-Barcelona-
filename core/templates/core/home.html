@@ -1,0 +1,82 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<!-- INFO CLUB -->
+    <div class="container-fluid">
+        <div id="info" class="row about-section">
+            <div class="col-lg-4 about-card">
+                <h3 class="font-weight-light">Identidad</h3>
+                <span class="line mb-5"></span>
+                <h5 class="mb-3">El respeto, el esfuerzo, la ambición, el trabajo en equipo y la humildad son los cinco principales valores que describen el espíritu del FC Barcelona</h5>
+                <button class="btn btn-outline-danger"><i class="icon-down-circled2 "></i><a href="https://www.fcbarcelona.es/es">Ir a la pagina oficial</a></button>
+            </div>
+            <div class="col-lg-4 about-card">
+                <span class="line mb-5"></span>
+                <div class="row">
+                    <div class="col-1 text-danger pt-1"><i class="ti-widget icon-lg"></i></div>
+                    <div class="col-10 ml-auto mr-3">
+                        <h6>RESPETO</h6>
+                        <p class="subtitle"> El respeto a los demás es uno de los pilares fundamentales de la vida democrática y de la capacidad de vivir en sociedad. Afecta, por tanto, al individuo, y tiene a la vez una dimensión social o colectiva. En el deporte, el respeto es fundamental, ya que se crean situaciones de tensión que hay que resolver de manera casi instantánea. Es necesario, por tanto, disponer, por encima de los reglamentos y normas, de este valor que garantiza las interrelaciones personales, cordiales y correctas. En el deporte, el respeto tiene unas concreciones parecidas a las que luego se exigen socialmente, pero la intensidad del momento hace que la presencia o la ausencia de respeto sea mucho más obvia y afecte al desarrollo de la situación o evento.</p>
+                        <hr>
+                    </div>
+                </div>
+                <span class="line mb-5"></span>
+                <div class="row">
+                    <div class="col-1 text-danger pt-1"><i class="ti-widget icon-lg"></i></div>
+                    <div class="col-10 ml-auto mr-3">
+                        <h6>ESFUERZO</h6>
+                        <p class="subtitle"> Hay muchos modelos que evitan el esfuerzo y abogan a favor de la suerte, el oportunismo y el triunfo inmediato. Con todo, sin embargo, el esfuerzo es un valor que nos permite llegar a lugares impensables o conseguir metas y objetivos que en momentos determinados nos han parecido muy lejanos o inalcanzables. La dedicación, el rigor, la constancia, la capacidad de sacrificio y la perseverancia dan fruto, mientras que la suerte o el triunfo rápido a menudo son huidizos o momentáneos. Hay que hacer notar que en el mundo escolar, los maestros y profesores ya hace tiempo que reivindican la cultura del esfuerzo como vehículo de desarrollo académico y superación personal, que debe ayudar a construir modelos sociales nuevos.</p>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 about-card">
+                <span class="line mb-5"></span>
+                <div class="row">
+                    <div class="col-1 text-danger pt-1"><i class="ti-widget icon-lg"></i></div>
+                    <div class="col-10 ml-auto mr-3">
+                        <h6>AMBICIÓN</h6>
+                        <p class="subtitle"> La ambición es la voluntad de conseguir el máximo rendimiento y de hacer las cosas no sólo bien, sino tan bien como sea posible, e intentar superarse cada día. Se trata de un valor que es tan aplicable al individuo como a los colectivos. Y esta opción pone en marcha un entramado de valores tan variados como la excelencia, la paciencia, la disciplina, el orden, la motivación, la responsabilidad, etc. En efecto, la ambición convoca y necesita un sistema de valores amplio, y, a la vez, se relaciona con el trabajo bien hecho, el esfuerzo y el rigor. Probablemente, en cuanto a las metas, apuntar a la ambición es la manera más segura de alcanzarlas, es el impulso para crecer.</p>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1 text-danger pt-1"><i class="ti-paint-bucket icon-lg"></i></div>
+                    <div class="col-10 ml-auto mr-3">
+                        <h6>TRABAJO EN EQUIPO</h6>
+                        <p class="subtitle">El trabajo en equipo implica que el sujeto pasa a formar parte de un grupo y que, como tal, deviene un elemento activo que actúa sobre el conjunto (a veces, incluso, en detrimento de la propia individualidad). Son innegables los beneficios que conlleva el hecho de saberse parte de un todo y que este hecho requiere un aprendizaje y la acentuación de muchos otros valores.</p>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1 text-danger pt-1"><i class="ti-stats-up icon-lg"></i></div>
+                    <div class="col-10 ml-auto mr-3">
+                        <h6>HUMILDAD</h6>
+                        <p class="subtitle">A menudo, cuando los deportistas y, en general, los individuos alcanzan las metas que se han marcado, se sitúan en un plano de superioridad (física, moral, económica, etc.) que les hace olvidar una serie de valores que con toda probabilidad han intervenido en la consecución de su éxito entendido como obtención de metas: esfuerzo, perseverancia, autocontrol, etc. Todo el mundo es consciente de cómo el actual FC Barcelona ha gestionado los triunfos obtenidos en los últimos años, y como desde la humildad (y también desde el esfuerzo, el rigor, la responsabilidad, etc.) se ha ganado el respeto de su entorno, de los adversarios y, en general, de todos. La humildad probablemente consiste en saber cómo tener claros los valores, a mantenerlos y a defenderlos incluso en situaciones de superioridad clara o de éxito.</p>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<section class="section bg-dark text-center">
+        <div class="container">
+            <div class="row text-center">
+                {% for trophy in trophy_data %}
+                <div class="col-md-6 col-lg-3">
+                    <div class="row ">
+                        <div class="col-5 text-right text-light border-right py-3">
+                            <div class="m-auto"><i class="ti-alarm-clock icon-xl"></i></div>
+                        </div>
+                        <div class="col-6 text-left py-3">
+                            <h1 class="text-danger font-weight-bold font40">{{ trophy.trophy_count }}</h1>
+                            <p class="text-light mb-1">{{ trophy.competition_type }}</p>
+                            <p class="text-light mb-1">{{ trophy.competition }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
